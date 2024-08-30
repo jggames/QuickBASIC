@@ -1,7 +1,8 @@
+REM Jim Gerrie 2024: Quick Basic "Cavernes in my Pocket" by Charles Feydy (1982)
+REM From MC-10 source,which was from TRS-80 Pocket PC
 CLS
 DIM msg$(68)
-
-DIM A(68) AS DOUBLE
+DIM A(69) AS DOUBLE
 
 FOR CC = 22 TO 65: READ msg$(CC): NEXT CC
 
@@ -12,7 +13,7 @@ FOR CC = 22 TO 65: READ msg$(CC): NEXT CC
 
 35 msg$(66) = "": IF A(3) > 100 THEN A(3) = A(3) - 100 * INT(A(3) / 100)
 40 G = A(2) - INT(A(2)): A(7) = G: FOR H = 1 TO 3: A(8) = H: G = G * 10: A(8 + H) = INT(G) + 7 + (H + 1) * 10: G = G - INT(G): A(7) = G: NEXT H: A(8) = H
-50 PRINT "YOU ARE IN A"; : CC = ASC(msg$(9) + "@"): IF CC = 65 OR CC = 69 OR CC = 73 OR CC = 79 OR CC = 85 THEN PRINT "N";
+50 PRINT "YOU ARE IN A"; : CC = ASC(msg$(A(9))): IF CC = 65 OR CC = 69 OR CC = 73 OR CC = 79 OR CC = 85 THEN PRINT "N";
 51 PRINT " "; msg$(A(9)); " "; msg$(A(10)); " "; msg$(A(11))
 60 IF INT(A(1)) > 40 - A(6) THEN G = INT(57 + INT(A(2)) / 20): PRINT "THERE IS A "; msg$(G): msg$(66) = msg$(G)
 70 FOR G = 1 TO 10: A(7) = G: IF A(11 + G) = A(3) THEN PRINT "YOU FIND RING #"; G
